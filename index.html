@@ -4,225 +4,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Word Guess Game</title>
     <link href="assets/css/reset.css" type="text/css" rel="stylesheet">
     <link href="assets/css/style.css" type="text/css" rel="stylesheet">
-    <style>
-    .container {
-        display: block;
-        height: 200px;
-        width: 200px;
-        margin: 0 auto;
-        border: 2px solid black;
-        text-align: center;
-    }
-    .keyboard {
-        position: relative;
-        top: 50px;
-        
-    }
-    .playbox {
-        position: relative;
-        top: 20px;
-        height: 50px;
-        width: 100%;
-        border: 1px solid black;
-    }
-    #answer {
-        position: relative;
-        top: 15px;
-    }
-    #button1:onclick {
-        display: hidden;
-    }
-    </style>
+
+
+    <title>Jukebox Hangman</title>
+
 </head>
 <body>
-    <div class="container">
-<button id="pickRandom" onclick="pickRandomWord()">start</button>
+    <header>
+        <div class="container">
+            <h1>Jukebox Hangman</h1>
 
-<div class="playbox">
-<div id="answer"></div>
-</div>
-<div id="currentLetter"></div>
-<div id="box" class="keyboard">
-<button class="buttonGuess" id="button1" value="a" onclick="guessLetter(1)">A</button>
-<button id="button2" value="b" onclick="guessLetter(2)">B</button>
-<button id="button3" value="c" onclick="guessLetter(3)">C</button>
-<button id="button4" value="d" onclick="guessLetter(4)">D</button>
-<button id="button5" value="e" onclick="guessLetter(5)">E</button>
-<button id="button6" value="f" onclick="guessLetter(6)">F</button>
-<button id="button7" value="g" onclick="guessLetter(7)">G</button>
-<button id="button8" value="h" onclick="guessLetter(8)">H</button>
-<button id="button9" value="i" onclick="guessLetter(9)">I</button>
-<button id="button10" value="j" onclick="guessLetter(10)">J</button>
-<button id="button11" value="k" onclick="guessLetter(11)">K</button>
-<button id="button12" value="l" onclick="guessLetter(12)">L</button>
-<button id="button13" value="m" onclick="guessLetter(13)">M</button>
-<button id="button14" value="n" onclick="guessLetter(14)">N</button>
-<button id="button15" value="o" onclick="guessLetter(15)">O</button>
-<button id="button16" value="p" onclick="guessLetter(16)">P</button>
-<button id="button17" value="q" onclick="guessLetter(17)">Q</button>
-<button id="button18" value="r" onclick="guessLetter(18)">R</button>
-<button id="button19" value="s" onclick="guessLetter(19)">S</button>
-<button id="button20" value="t" onclick="guessLetter(20)">T</button>
-<button id="button21" value="u" onclick="guessLetter(21)">U</button>
-<button id="button22" value="v" onclick="guessLetter(22)">V</button>
-<button id="button23" value="w" onclick="guessLetter(23)">W</button>
-<button id="button24" value="x" onclick="guessLetter(24)">X</button>
-<button id="button25" value="y" onclick="guessLetter(25)">Y</button>
-<button id="button26" value="z" onclick="guessLetter(26)">Z</button>
-<button id="button27" onclick"guessLetter(27)">reset</button>
-</div>
-</div>
-<div id="test"></div>
+        </div>
+
+    </header>
+
+    <div id=#main-container class="container">
+        <div id="jukebox-main">
+            <img src="assets/images/jukebox.jpg">
+            <div class="body-game">
+                <div id="game-zone">
+                    Please insert quarter to begin:
+                </div>
+                <div>
+                    <button id="start-game" onclick="randomWord()">25&#162;</button>
+                </div>
+                    <div id="box" class="keyboard">
+                            <button id="button1" value="a" onclick="guessLetter(1)">A</button>
+                            <button id="button2" value="b" onclick="guessLetter(2)">B</button>
+                            <button id="button3" value="c" onclick="guessLetter(3)">C</button>
+                            <button id="button4" value="d" onclick="guessLetter(4)">D</button>
+                            <button id="button5" value="e" onclick="guessLetter(5)">E</button>
+                            <button id="button6" value="f" onclick="guessLetter(6)">F</button>
+                            <button id="button7" value="g" onclick="guessLetter(7)">G</button>
+                            <button id="button8" value="h" onclick="guessLetter(8)">H</button>
+                            <button id="button9" value="i" onclick="guessLetter(9)">I</button>
+                            <button id="button10" value="j" onclick="guessLetter(10)">J</button>
+                            <button id="button11" value="k" onclick="guessLetter(11)">K</button>
+                            <button id="button12" value="l" onclick="guessLetter(12)">L</button>
+                            <button id="button13" value="m" onclick="guessLetter(13)">M</button>
+                            <button id="button14" value="n" onclick="guessLetter(14)">N</button>
+                            <button id="button15" value="o" onclick="guessLetter(15)">O</button>
+                            <button id="button16" value="p" onclick="guessLetter(16)">P</button>
+                            <button id="button17" value="q" onclick="guessLetter(17)">Q</button>
+                            <button id="button18" value="r" onclick="guessLetter(18)">R</button>
+                            <button id="button19" value="s" onclick="guessLetter(19)">S</button>
+                            <button id="button20" value="t" onclick="guessLetter(20)">T</button>
+                            <button id="button21" value="u" onclick="guessLetter(21)">U</button>
+                            <button id="button22" value="v" onclick="guessLetter(22)">V</button>
+                            <button id="button23" value="w" onclick="guessLetter(23)">W</button>
+                            <button id="button24" value="x" onclick="guessLetter(24)">X</button>
+                            <button id="button25" value="y" onclick="guessLetter(25)">Y</button>
+                            <button id="button26" value="z" onclick="guessLetter(26)">Z</button>
+                            </div>
+            </div>
+        </div>
+       
+        
+
+    </div>
 
 
 
 
+
+<!-- Javascript starts here -->
 <script type="text/javascript">
-// declare variables
-var wordBank = ["george of the jungle", "fred the pope", "apple orange", "the dog"];
-var correct = 0;
-var wordCapsule = "";
-var incorrect = 9;
+
+// declare all variables 
+var words = ["banana", "high school", "alligator", "bicycle"];
+var aryGuesses = [];
+var aryWord = words[0].split("");
+var letter = "";
 
 
 
+// create random word for loop
+function randomWord() {
+    var aryWordState = [];
+    aryWord = words[Math.floor(Math.random() * words.length)];
+    console.log(aryWord);
 
-// random word generator
-function pickRandomWord() {
-randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-console.log(randomWord);
-
-// replace letters with "_"
-wordCapsule = [];
-for (i = 0; i < randomWord.length; i++) {
-    if (wordCapsule[i] === " ") {
-        wordCapsule.push("&nbsp;");
-    } else {
-        wordCapsule.push("_");
+    for (i = 0; i < aryWord.length; i++) {
+        if (aryWord[i] == " ") {
+            aryWordState.push("&nbsp;");
+        } else {
+        aryWordState.push("_");
+        document.getElementById("game-zone").innerHTML = aryWordState.join(" ");
+        }
     }
-} document.getElementById("answer").innerHTML = wordCapsule.join(" ");
 }
-// replace "_" with user guesses
-// wrong guesses subtracts a value from the guess counter
-// once all letters are correct a song plays coresponding to the answer.
 
 
+// put in key buttons
 
-// when buttons are pressed they are assigned a value and then disappear
- function guessLetter(x) {
-   if (x === 1) {
+// create for loop for guesses
+
+function guessLetter(x) {
+    
+    if (x === 1) {
        document.getElementById("button1").style.visibility = "hidden";
-       var letter = document.getElementById("button1").value;
+       letter = document.getElementById("button1").value;
    } if (x === 2) {
        document.getElementById("button2").style.visibility = "hidden";
-       var letter = document.getElementById("button2").value;
+       letter = document.getElementById("button2").value; 
    }if (x === 3) {
        document.getElementById("button3").style.visibility = "hidden";
-       var letter = document.getElementById("button3").value;
+       letter = document.getElementById("button3").value;
    }if (x === 4) {
        document.getElementById("button4").style.visibility = "hidden";
-       var letter = document.getElementById("button4").value;
+       letter = document.getElementById("button4").value;
    }if (x === 5) {
        document.getElementById("button5").style.visibility = "hidden";
-       var letter = document.getElementById("button5").value;
+       letter = document.getElementById("button5").value;
    }if (x === 6) {
        document.getElementById("button6").style.visibility = "hidden";
-       var letter = document.getElementById("button6").value;
+       letter = document.getElementById("button6").value;
    }if (x === 7) {
        document.getElementById("button7").style.visibility = "hidden";
-       var letter = document.getElementById("button7").value;
+       letter = document.getElementById("button7").value;
    }if (x === 8) {
        document.getElementById("button8").style.visibility = "hidden";
-       var letter = document.getElementById("button8").value;
+       letter = document.getElementById("button8").value;
    }if (x === 9) {
        document.getElementById("button9").style.visibility = "hidden";
-       var letter = document.getElementById("button9").value;
+       letter = document.getElementById("button9").value;
    }if (x === 10) {
        document.getElementById("button10").style.visibility = "hidden";
-       var letter = document.getElementById("button10").value;
+       letter = document.getElementById("button10").value;
    }if (x === 11) {
        document.getElementById("button11").style.visibility = "hidden";
-       var letter = document.getElementById("button11").value;
+       letter = document.getElementById("button11").value;
    }if (x === 12) {
        document.getElementById("button12").style.visibility = "hidden";
-       var letter = document.getElementById("button12").value;
+       letter = document.getElementById("button12").value;
    }if (x === 13) {
        document.getElementById("button13").style.visibility = "hidden";
-       var letter = document.getElementById("button13").value;
+       letter = document.getElementById("button13").value;
    }if (x === 14) {
        document.getElementById("button14").style.visibility = "hidden";
-       var letter = document.getElementById("button14").value;
+       letter = document.getElementById("button14").value;
    }if (x === 15) {
        document.getElementById("button15").style.visibility = "hidden";
-       var letter = document.getElementById("button15").value;
+       letter = document.getElementById("button15").value;
    }if (x === 16) {
        document.getElementById("button16").style.visibility = "hidden";
-       var letter = document.getElementById("button16").value;
+       letter = document.getElementById("button16").value;
    }if (x === 17) {
        document.getElementById("button17").style.visibility = "hidden";
-       var letter = document.getElementById("button17").value;
+       letter = document.getElementById("button17").value;
    }if (x === 18) {
        document.getElementById("button18").style.visibility = "hidden";
-       var letter = document.getElementById("button18").value;
+       letter = document.getElementById("button18").value;
    }if (x === 19) {
        document.getElementById("button19").style.visibility = "hidden";
-       var letter = document.getElementById("button19").value;
+       letter = document.getElementById("button19").value;
    }if (x === 20) {
        document.getElementById("button20").style.visibility = "hidden";
-       var letter = document.getElementById("button20").value;
+       letter = document.getElementById("button20").value;
    }if (x === 21) {
        document.getElementById("button21").style.visibility = "hidden";
-       var letter = document.getElementById("button21").value;
+       letter = document.getElementById("button21").value;
    }if (x === 22) {
        document.getElementById("button22").style.visibility = "hidden";
-       var letter = document.getElementById("button22").value;
+       letter = document.getElementById("button22").value;
    }if (x === 23) {
        document.getElementById("button23").style.visibility = "hidden";
-       var letter = document.getElementById("button23").value;
+       letter = document.getElementById("button23").value;
    }if (x === 24) {
        document.getElementById("button24").style.visibility = "hidden";
-       var letter = document.getElementById("button24").value;
+       letter = document.getElementById("button24").value;
    }if (x === 25) {
        document.getElementById("button25").style.visibility = "hidden";
-       var letter = document.getElementById("button25").value;
+       letter = document.getElementById("button25").value;
    }if (x === 26) {
        document.getElementById("button26").style.visibility = "hidden";
-       var letter = document.getElementById("button26").value;
-   }
-       
-   console.log(letter);
-   
-   
-  
-    for (j = 0; j < wordCapsule.length; j++) {
-        if (letter === randomWord.charAt[j]) {
-            correct++;
-            console.log(correct);
-        } 
+       letter = document.getElementById("button26").value;
+   } 
 
-    }
+
+
+
 }
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
+
 
 
 </body>
