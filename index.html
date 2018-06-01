@@ -31,32 +31,32 @@
                     <button id="start-game" onclick="randomWord()">25&#162;</button>
                 </div>
                     <div id="box" class="keyboard">
-                            <button id="button1" value="a" onclick="guessLetter(1)">A</button>
-                            <button id="button2" value="b" onclick="guessLetter(2)">B</button>
-                            <button id="button3" value="c" onclick="guessLetter(3)">C</button>
-                            <button id="button4" value="d" onclick="guessLetter(4)">D</button>
-                            <button id="button5" value="e" onclick="guessLetter(5)">E</button>
-                            <button id="button6" value="f" onclick="guessLetter(6)">F</button>
-                            <button id="button7" value="g" onclick="guessLetter(7)">G</button>
-                            <button id="button8" value="h" onclick="guessLetter(8)">H</button>
-                            <button id="button9" value="i" onclick="guessLetter(9)">I</button>
-                            <button id="button10" value="j" onclick="guessLetter(10)">J</button>
-                            <button id="button11" value="k" onclick="guessLetter(11)">K</button>
-                            <button id="button12" value="l" onclick="guessLetter(12)">L</button>
-                            <button id="button13" value="m" onclick="guessLetter(13)">M</button>
-                            <button id="button14" value="n" onclick="guessLetter(14)">N</button>
-                            <button id="button15" value="o" onclick="guessLetter(15)">O</button>
-                            <button id="button16" value="p" onclick="guessLetter(16)">P</button>
-                            <button id="button17" value="q" onclick="guessLetter(17)">Q</button>
-                            <button id="button18" value="r" onclick="guessLetter(18)">R</button>
-                            <button id="button19" value="s" onclick="guessLetter(19)">S</button>
-                            <button id="button20" value="t" onclick="guessLetter(20)">T</button>
-                            <button id="button21" value="u" onclick="guessLetter(21)">U</button>
-                            <button id="button22" value="v" onclick="guessLetter(22)">V</button>
-                            <button id="button23" value="w" onclick="guessLetter(23)">W</button>
-                            <button id="button24" value="x" onclick="guessLetter(24)">X</button>
-                            <button id="button25" value="y" onclick="guessLetter(25)">Y</button>
-                            <button id="button26" value="z" onclick="guessLetter(26)">Z</button>
+                            <button id="button1" value="a" onclick="hideLetter(1)">A</button>
+                            <button id="button2" value="b" onclick="hideLetter(2)">B</button>
+                            <button id="button3" value="c" onclick="hideLetter(3)">C</button>
+                            <button id="button4" value="d" onclick="hideLetter(4)">D</button>
+                            <button id="button5" value="e" onclick="hideLetter(5)">E</button>
+                            <button id="button6" value="f" onclick="hideLetter(6)">F</button>
+                            <button id="button7" value="g" onclick="hideLetter(7)">G</button>
+                            <button id="button8" value="h" onclick="hideLetter(8)">H</button>
+                            <button id="button9" value="i" onclick="hideLetter(9)">I</button>
+                            <button id="button10" value="j" onclick="hideLetter(10)">J</button>
+                            <button id="button11" value="k" onclick="hideLetter(11)">K</button>
+                            <button id="button12" value="l" onclick="hideLetter(12)">L</button>
+                            <button id="button13" value="m" onclick="hideLetter(13)">M</button>
+                            <button id="button14" value="n" onclick="hideLetter(14)">N</button>
+                            <button id="button15" value="o" onclick="hideLetter(15)">O</button>
+                            <button id="button16" value="p" onclick="hideLetter(16)">P</button>
+                            <button id="button17" value="q" onclick="hideLetter(17)">Q</button>
+                            <button id="button18" value="r" onclick="hideLetter(18)">R</button>
+                            <button id="button19" value="s" onclick="hideLetter(19)">S</button>
+                            <button id="button20" value="t" onclick="hideLetter(20)">T</button>
+                            <button id="button21" value="u" onclick="hideLetter(21)">U</button>
+                            <button id="button22" value="v" onclick="hideLetter(22)">V</button>
+                            <button id="button23" value="w" onclick="hideLetter(23)">W</button>
+                            <button id="button24" value="x" onclick="hideLetter(24)">X</button>
+                            <button id="button25" value="y" onclick="hideLetter(25)">Y</button>
+                            <button id="button26" value="z" onclick="hideLetter(26)">Z</button>
                             </div>
             </div>
         </div>
@@ -77,12 +77,13 @@ var words = ["banana", "high school", "alligator", "bicycle"];
 var aryGuesses = [];
 var aryWord = words[0].split("");
 var letter = "";
+var aryWordState = [];
 
 
 
 // create random word for loop
 function randomWord() {
-    var aryWordState = [];
+    aryWordState = [];
     aryWord = words[Math.floor(Math.random() * words.length)];
     console.log(aryWord);
 
@@ -101,91 +102,128 @@ function randomWord() {
 
 // create for loop for guesses
 
-function guessLetter(x) {
+function hideLetter(x) {
     
     if (x === 1) {
        document.getElementById("button1").style.visibility = "hidden";
        letter = document.getElementById("button1").value;
+       guessLetter();
    } if (x === 2) {
        document.getElementById("button2").style.visibility = "hidden";
        letter = document.getElementById("button2").value; 
+       guessLetter();
    }if (x === 3) {
        document.getElementById("button3").style.visibility = "hidden";
        letter = document.getElementById("button3").value;
+       guessLetter();
    }if (x === 4) {
        document.getElementById("button4").style.visibility = "hidden";
        letter = document.getElementById("button4").value;
+       guessLetter();
    }if (x === 5) {
        document.getElementById("button5").style.visibility = "hidden";
        letter = document.getElementById("button5").value;
+       guessLetter();
    }if (x === 6) {
        document.getElementById("button6").style.visibility = "hidden";
        letter = document.getElementById("button6").value;
+       guessLetter();
    }if (x === 7) {
        document.getElementById("button7").style.visibility = "hidden";
        letter = document.getElementById("button7").value;
+       guessLetter();
    }if (x === 8) {
        document.getElementById("button8").style.visibility = "hidden";
        letter = document.getElementById("button8").value;
+       guessLetter();
    }if (x === 9) {
        document.getElementById("button9").style.visibility = "hidden";
        letter = document.getElementById("button9").value;
+       guessLetter();
    }if (x === 10) {
        document.getElementById("button10").style.visibility = "hidden";
        letter = document.getElementById("button10").value;
+       guessLetter();
    }if (x === 11) {
        document.getElementById("button11").style.visibility = "hidden";
        letter = document.getElementById("button11").value;
+       guessLetter();
    }if (x === 12) {
        document.getElementById("button12").style.visibility = "hidden";
        letter = document.getElementById("button12").value;
+       guessLetter();
    }if (x === 13) {
        document.getElementById("button13").style.visibility = "hidden";
        letter = document.getElementById("button13").value;
+       guessLetter();
    }if (x === 14) {
        document.getElementById("button14").style.visibility = "hidden";
        letter = document.getElementById("button14").value;
+       guessLetter();
    }if (x === 15) {
        document.getElementById("button15").style.visibility = "hidden";
        letter = document.getElementById("button15").value;
+       guessLetter();
    }if (x === 16) {
        document.getElementById("button16").style.visibility = "hidden";
        letter = document.getElementById("button16").value;
+       guessLetter();
    }if (x === 17) {
        document.getElementById("button17").style.visibility = "hidden";
        letter = document.getElementById("button17").value;
+       guessLetter();
    }if (x === 18) {
        document.getElementById("button18").style.visibility = "hidden";
        letter = document.getElementById("button18").value;
+       guessLetter();
    }if (x === 19) {
        document.getElementById("button19").style.visibility = "hidden";
        letter = document.getElementById("button19").value;
+       guessLetter();
    }if (x === 20) {
        document.getElementById("button20").style.visibility = "hidden";
        letter = document.getElementById("button20").value;
+       guessLetter();
    }if (x === 21) {
        document.getElementById("button21").style.visibility = "hidden";
        letter = document.getElementById("button21").value;
+       guessLetter();
    }if (x === 22) {
        document.getElementById("button22").style.visibility = "hidden";
        letter = document.getElementById("button22").value;
+       guessLetter();
    }if (x === 23) {
        document.getElementById("button23").style.visibility = "hidden";
        letter = document.getElementById("button23").value;
+       guessLetter();
    }if (x === 24) {
        document.getElementById("button24").style.visibility = "hidden";
        letter = document.getElementById("button24").value;
+       guessLetter();
    }if (x === 25) {
        document.getElementById("button25").style.visibility = "hidden";
        letter = document.getElementById("button25").value;
+       guessLetter();
    }if (x === 26) {
        document.getElementById("button26").style.visibility = "hidden";
        letter = document.getElementById("button26").value;
+       guessLetter();
    } 
 
 
 
 
+}
+
+function guessLetter() {
+    for (i = 0; i < aryWord.length; i++) {
+        if (aryWord[i] == letter) {
+            aryWordState[i] = letter
+        document.getElementById("game-zone").innerHTML = aryWordState.join(" ");
+        } else {
+            console.log("wrong");
+        }
+    }
 }
 </script>
 
