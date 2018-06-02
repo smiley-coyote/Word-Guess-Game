@@ -6,7 +6,7 @@ var aryGuesses = [];
 var aryWord = words[0].split("");
 var letter = "";
 var aryWordState = [];
-var guesses = 8;
+var guesses = 3;
 var wins = 0;
 var currentSong = "";
 var letterBank = 0;
@@ -14,6 +14,7 @@ var holdWord = "";
 var correct = true;
 
 // song variables
+var audio = new Audio();
 var quarterDrop = new Audio("assets/music/quarterdrop.mp3");
 var myGirl = new Audio("assets/music/mygirl.mp3");
 var backInBlack = new Audio("assets/music/backinblack.mp3");
@@ -26,6 +27,7 @@ var myGirl = new Audio("assets/music/mygirl.mp3");
 var roadHouseBlues = new Audio("assets/music/roadhouseblues.mp3");
 var satisfaction = new Audio("assets/music/satisfaction.mp3");
 var sunshine = new Audio("assets/music/walkingonsunshine.mp3");
+var wins = 0;
 
 
 
@@ -174,53 +176,78 @@ function guessLetter() {
         if (aryWord[i] === letter) {  
             aryWordState[i] = letter;
         letterBank--;
+        
+            guesses= 4;
+            document.getElementById("guesses-left").innerHTML = guesses;
+        
         document.getElementById("game-zone").innerHTML = aryWordState.join(" ");
         console.log("Letters left:" + letterBank);
+       
             if (letterBank == 0) {
+                
                 if (aryWord == "MY GIRL") {
-                    myGirl.play();
+                    audio.pause();
+                    audio = myGirl;
                     songInfo(1);
                 } if (aryWord == "BACK IN BLACK") {
-                    backInBlack.play();
+                    audio.pause();
+                    audio = backInBlack;
                     songInfo(2);
                 } if (aryWord == "BEAT IT") {
-                    beatIt.play();
+                    audio.pause();
+                    audio = beatIt;
                     songInfo(3);
                 } if (aryWord == "BORN TO BE WILD") {
-                    bornWild.play();
+                    audio.pause();
+                    audio = bornWild;
                     songInfo(4);
                 } if (aryWord == "I GOT YOU BABE") {
-                    gotYouBabe.play();
+                    audio.pause();
+                    audio = gotYouBabe;
                     songInfo(5);
                 } if (aryWord == "I WANNA HOLD YOUR HAND") {
-                    holdYourHand.play();
+                    audio.pause();
+                    audio = holdYourHand;
                     songInfo(6);
                 } if (aryWord == "LUCY IN THE SKY WITH DIAMONDS") {
-                    lucySky.play();
+                    audio.pause();
+                    audio = lucySky;
                     songInfo(7);
                 } if (aryWord == "ROADHOUSE BLUES") {
-                    roadHouseBlues.play();
+                    audio.pause();
+                    audio = roadHouseBlues;
                     songInfo(8);
                 } if (aryWord == "SATISFACTION") {
-                    satisfaction.play();
+                    audio.pause();
+                    audio = satisfaction;
                     songInfo(9);
                 } if (aryWord == "WALKING ON SUNSHINE") {
-                    sunshine.play();
+                    audio.pause();
+                    audio = sunshine;
                     songInfo(10);
                 } 
 
             }
         } 
     } 
+    console.log("guesses: " + guesses);
+    guesses--;
+    document.getElementById("guesses-left").innerHTML = guesses;
+    if (guesses == 0) {
+        document.getElementById("game-zone").innerHTML = "OUT OF ORDER"
+    }
+  
+
 } 
             
          
     
-    console.log("guesses: " + guesses);
+    
 
 // start game 
 function quarter() {
     quarterDrop.play();
+    guesses = 3;
     document.getElementById("button1").style.visibility = "visible";
     document.getElementById("button2").style.visibility = "visible";
     document.getElementById("button3").style.visibility = "visible";
@@ -249,37 +276,47 @@ function quarter() {
     document.getElementById("button26").style.visibility = "visible";
     document.getElementById("hint").style.visibility = "visible";
     document.getElementById("hint-reveal").innerHTML = "";
+    document.getElementById("guesses-left").innerHTML = guesses;
+    document.getElementById("guess-box").style.visibility = "visible";
+    document.getElementById("wins-box").style.visibility = "visible";
    
-}
-function wrongLetter() {
-   
-        guesses--;
-        console.log("guesses left: " + guesses);
-    
 }
 
+
 function songInfo(s) {
+    wins++;
     if (s == 1) {
+        audio.play();
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'My Girl' by The Temptations";
     } if (s == 2) {
+        audio.play();
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Back in Black' by AC/DC";
     } if (s == 3) {
+        audio.play();
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Beat It' by Michael Jackson";
     } if (s == 4) {
+        audio.play();
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Born To Be Wild' by Steppenwolf";
     } if (s == 5) {
+        audio.play();
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'I Got You Babe' by Sonny & Cher";
     } if (s == 6) {
+        audio.play();
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'I Wanna Hold Your Hand' by The Beatles";
     } if (s == 7) {
+        audio.play();
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Lucy In The Sky With Diamonds' by The Beatles";
     } if (s == 8) {
+        audio.play();
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Roadhouse Blues' by The Doors";
     } if (s == 9) {
+        audio.play();
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'(I Can't Get No) Satisfaction' by The Rolling Stones";
     } if (s == 10) {
+        audio.play();
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Walking On Sunshine' by Katrina and the Waves";
     } 
+    document.getElementById("wins").innerHTML = wins;
 }
 
 function revealHint() {

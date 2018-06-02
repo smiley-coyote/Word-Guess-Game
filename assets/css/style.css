@@ -7,6 +7,14 @@ body {
     font-family: 'Righteous', cursive;
 }
 
+body h3 {
+    font-size: 1.3em;
+}
+
+body h4 {
+    font-size: 1em;
+}
+
 header {
     position: relative;
     top: 0px;
@@ -56,12 +64,12 @@ header {
     width: auto;
     right: 200px;
     float: left;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 .body-game {
     position: absolute;
     margin-left: 450px;
-    margin-top: 100px;
+    margin-top: 70px;
     width: 450px;
     height: 430px;
     float: right;
@@ -84,8 +92,9 @@ button {
 #start-game {
     width: 40px;
     position: relative;
-    bottom: 20px;
+    bottom: 60px;
 }
+
 
 #current-song {
     position: absolute;
@@ -99,12 +108,33 @@ button {
     position: relative;
     width: 100px;
     height: auto;
-    margin: 0 auto;
+    right: 10px;
+    display: inline-block;
 }
 #hintbox button {
     width: auto;
 }
+#guess-box {
+    position: relative;
+    display: inline-block;
+    float: left;
+    top: 40px;
+    visibility: hidden;
+}
+#wins-box {
+    position: relative;
+    display: inline-block;
+    float: right;
+    top: 40px;
+    visibility: hidden;
+}
 
+#box button {
+    visibility: hidden;
+}
+#hintbox button {
+    visibility: hidden;
+}
 @keyframes border-change {
     5% {border-color: yellow}
     10% {border-color: rgb(231, 3, 231)}
