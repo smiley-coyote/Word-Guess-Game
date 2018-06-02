@@ -28,35 +28,35 @@
                     Please insert quarter to begin:
                 </div>
                 <div>
-                    <button id="start-game" onclick="randomWord()">25&#162;</button>
+                    <button id="start-game" onclick="randomWord();quarter()">25&#162;</button>
                 </div>
                     <div id="box" class="keyboard">
-                            <button id="button1" value="a" onclick="hideLetter(1)">A</button>
-                            <button id="button2" value="b" onclick="hideLetter(2)">B</button>
-                            <button id="button3" value="c" onclick="hideLetter(3)">C</button>
-                            <button id="button4" value="d" onclick="hideLetter(4)">D</button>
-                            <button id="button5" value="e" onclick="hideLetter(5)">E</button>
-                            <button id="button6" value="f" onclick="hideLetter(6)">F</button>
-                            <button id="button7" value="g" onclick="hideLetter(7)">G</button>
-                            <button id="button8" value="h" onclick="hideLetter(8)">H</button>
-                            <button id="button9" value="i" onclick="hideLetter(9)">I</button>
-                            <button id="button10" value="j" onclick="hideLetter(10)">J</button>
-                            <button id="button11" value="k" onclick="hideLetter(11)">K</button>
-                            <button id="button12" value="l" onclick="hideLetter(12)">L</button>
-                            <button id="button13" value="m" onclick="hideLetter(13)">M</button>
-                            <button id="button14" value="n" onclick="hideLetter(14)">N</button>
-                            <button id="button15" value="o" onclick="hideLetter(15)">O</button>
-                            <button id="button16" value="p" onclick="hideLetter(16)">P</button>
-                            <button id="button17" value="q" onclick="hideLetter(17)">Q</button>
-                            <button id="button18" value="r" onclick="hideLetter(18)">R</button>
-                            <button id="button19" value="s" onclick="hideLetter(19)">S</button>
-                            <button id="button20" value="t" onclick="hideLetter(20)">T</button>
-                            <button id="button21" value="u" onclick="hideLetter(21)">U</button>
-                            <button id="button22" value="v" onclick="hideLetter(22)">V</button>
-                            <button id="button23" value="w" onclick="hideLetter(23)">W</button>
-                            <button id="button24" value="x" onclick="hideLetter(24)">X</button>
-                            <button id="button25" value="y" onclick="hideLetter(25)">Y</button>
-                            <button id="button26" value="z" onclick="hideLetter(26)">Z</button>
+                            <button id="button1" value="A" onclick="hideLetter(1)">A</button>
+                            <button id="button2" value="B" onclick="hideLetter(2)">B</button>
+                            <button id="button3" value="C" onclick="hideLetter(3)">C</button>
+                            <button id="button4" value="D" onclick="hideLetter(4)">D</button>
+                            <button id="button5" value="E" onclick="hideLetter(5)">E</button>
+                            <button id="button6" value="F" onclick="hideLetter(6)">F</button>
+                            <button id="button7" value="G" onclick="hideLetter(7)">G</button>
+                            <button id="button8" value="H" onclick="hideLetter(8)">H</button>
+                            <button id="button9" value="I" onclick="hideLetter(9)">I</button>
+                            <button id="button10" value="J" onclick="hideLetter(10)">J</button>
+                            <button id="button11" value="K" onclick="hideLetter(11)">K</button>
+                            <button id="button12" value="L" onclick="hideLetter(12)">L</button>
+                            <button id="button13" value="M" onclick="hideLetter(13)">M</button>
+                            <button id="button14" value="N" onclick="hideLetter(14)">N</button>
+                            <button id="button15" value="O" onclick="hideLetter(15)">O</button>
+                            <button id="button16" value="P" onclick="hideLetter(16)">P</button>
+                            <button id="button17" value="Q" onclick="hideLetter(17)">Q</button>
+                            <button id="button18" value="R" onclick="hideLetter(18)">R</button>
+                            <button id="button19" value="S" onclick="hideLetter(19)">S</button>
+                            <button id="button20" value="T" onclick="hideLetter(20)">T</button>
+                            <button id="button21" value="U" onclick="hideLetter(21)">U</button>
+                            <button id="button22" value="V" onclick="hideLetter(22)">V</button>
+                            <button id="button23" value="W" onclick="hideLetter(23)">W</button>
+                            <button id="button24" value="X" onclick="hideLetter(24)">X</button>
+                            <button id="button25" value="Y" onclick="hideLetter(25)">Y</button>
+                            <button id="button26" value="Z" onclick="hideLetter(26)">Z</button>
                             </div>
             </div>
         </div>
@@ -65,19 +65,45 @@
 
     </div>
 
-
+    <audio id="myAudio">
+           
+            <source src="assets/music/backinblack.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
 
 
 
 <!-- Javascript starts here -->
 <script type="text/javascript">
 
-// declare all variables 
-var words = ["banana", "high school", "alligator", "bicycle"];
+// game variables 
+var words = ["MY GIRL", "BACK IN BLACK", "BEAT IT", "BORN TO BE WILD", "I GOT YOU BABE", "I WANNA HOLD YOUR HAND", 
+"BORN TO BE WILD", "I GOT YOU BABE", "I WANNA HOLD YOUR HAND", "LUCY IN THE SKY WITH DIAMONDS", "ROADHOUSE BLUES", 
+"SATISFACTION", "WALKING ON"];
 var aryGuesses = [];
 var aryWord = words[0].split("");
 var letter = "";
 var aryWordState = [];
+var guesses = 8;
+var wins = 0;
+var currentSong = "";
+var letterBank = 0;
+var holdWord = "";
+
+// song variables
+var quarterDrop = new Audio("assets/music/quarterdrop.mp3");
+var myGirl = new Audio("assets/music/mygirl.mp3");
+var backInBlack = new Audio("assets/music/backinblack.mp3");
+var beatIt = new Audio("assets/music/beatit.mp3");
+var bornWild = new Audio("assets/music/borntobewild.mp3");
+var gotYouBabe = new Audio("assets/music/igotyoubabe.mp3");
+var holdYourHand = new Audio("assets/music/iwannaholdyourhand.mp3");
+var lucySky = new Audio("assets/music/lucyintheskywithdiamonds.mp3");
+var myGirl = new Audio("assets/music/mygirl.mp3");
+var roadHouseBlues = new Audio("assets/music/roadhouseblues.mp3");
+var satisfaction = new Audio("assets/music/satisfaction.mp3");
+var sunshine = new Audio("assets/music/walkingonsunshine.mp3");
+
 
 
 
@@ -85,17 +111,18 @@ var aryWordState = [];
 function randomWord() {
     aryWordState = [];
     aryWord = words[Math.floor(Math.random() * words.length)];
-    console.log(aryWord);
-
     for (i = 0; i < aryWord.length; i++) {
         if (aryWord[i] == " ") {
             aryWordState.push("&nbsp;");
         } else {
         aryWordState.push("_");
+        letterBank++;
         document.getElementById("game-zone").innerHTML = aryWordState.join(" ");
-        }
-    }
-}
+        } 
+        
+    } console.log(letterBank);
+    console.log(aryWord);
+} 
 
 
 // put in key buttons
@@ -217,14 +244,50 @@ function hideLetter(x) {
 
 function guessLetter() {
     for (i = 0; i < aryWord.length; i++) {
-        if (aryWord[i] == letter) {
+        if (aryWord[i] === letter) {  
             aryWordState[i] = letter
+        
         document.getElementById("game-zone").innerHTML = aryWordState.join(" ");
+        letterBank--;
+        console.log("Letters left:" + letterBank);
+            if (letterBank == 0) {
+                if (aryWord == "MY GIRL") {
+                    myGirl.play();
+                } if (aryWord == "BACK IN BLACK") {
+                    backInBlack.play();
+                } if (aryWord == "BEAT IT") {
+                    beatIt.play();
+                } if (aryWord == "BORN TO BE WILD") {
+                    bornWild.play();
+                } if (aryWord == "I GOT YOU BABE") {
+                    gotYouBabe.play();
+                } if (aryWord == "I WANNA HOLD YOUR HAND") {
+                    holdYourHand.play();
+                } if (aryWord == "LUCY IN THE SKY WITH DIAMONDS") {
+                    lucySky.play();
+                } if (aryWord == "ROADHOUSE BLUES") {
+                    roadHouseBlues.play();
+                } if (aryWord == "SATISFACTION") {
+                    satisfaction.play();
+                } if (aryWord == "WALKING ON SUNSHINE") {
+                    sunshine.play();
+                } 
+
+            }
         } else {
-            console.log("wrong");
+            guesses--;
+            
         }
     }
 }
+
+
+
+function quarter() {
+    quarterDrop.play();
+    letterBank = 0;
+}
+
 </script>
 
 
