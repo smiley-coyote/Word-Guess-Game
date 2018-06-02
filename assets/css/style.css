@@ -28,7 +28,9 @@ header {
 .container h1 {
     font-size: 40px;
     padding-top: 35px;
-    color: white;
+    color: #1FF30C;
+    animation-name: color-change;
+    animation-duration: 500s;
 }
 
 #main-container {
@@ -41,10 +43,14 @@ header {
     background: white;
     height: 580px;
     margin-top: 30px;
-    border: 5px solid #1FF30C;
+    border: 10px solid #1FF30C;
     background-image: url('../images/darkbrick.png');
+    border-radius: 25px;
+    animation-name: border-change;
+    animation-duration: 500s;
     
 }
+.noborder { border: 0; }
 #jukebox-main img {
     height: 500px;
     width: auto;
@@ -53,15 +59,18 @@ header {
     margin-top: 50px;
 }
 .body-game {
-    position: relative;
-    right: 40px;
-    top: 100px;
+    position: absolute;
+    margin-left: 450px;
+    margin-top: 100px;
     width: 450px;
     height: 400px;
     float: right;
     padding-top: 200px;
-    border: 2px solid #F4F505;
+    border: 3px solid pink;
     background: #F9F9FF;
+    border-radius: 4px;
+    animation-name: border-change;
+    animation-duration: 500s;
 }
 #game-zone {
     position: relative;
@@ -78,7 +87,58 @@ button {
     bottom: 20px;
 }
 
+#current-song {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    text-align: center;
+    
+}
 
+@keyframes border-change {
+    5% {border-color: yellow}
+    10% {border-color: rgb(231, 3, 231)}
+    15% {border-color: rgb(255, 0, 200)}
+    20% {border-color: #1FF30C}
+    25% {border-color: blue}
+    30% {border-color: rgb(231, 3, 231)}
+    35% {border-color: yellow}
+    40% {border-color: rgb(255, 0, 200)}
+    45% {border-color: blue}
+    50%{border-color:#1FF30C}
+    55% {border-color: rgb(231, 3, 231)}
+    60% {border-color: yellow}
+    65% {border-color: rgb(255, 0, 200)}
+    70% {border-color: rgb(231, 3, 231)}
+    75% {border-color: rgb(0, 17, 255)}
+    80% {border-color: #1FF30C}
+    85% {border-color: yellow}
+    90% {border-color: pink}
+    95% {border-color: blue}
+    100%{border-color: #1FF30C}
+}
+
+@keyframes color-change {
+    5% {color: yellow}
+    10% {color: rgb(231, 3, 231)}
+    15% {color: rgb(255, 0, 200)}
+    20% {color: #1FF30C}
+    25% {color: blue}
+    30% {color: rgb(231, 3, 231)}
+    35% {color: yellow}
+    40% {color: rgb(255, 0, 200)}
+    45% {color: blue}
+    50%{color:#1FF30C}
+    55% {color: rgb(231, 3, 231)}
+    60% {color: yellow}
+    65% {color: rgb(255, 0, 200)}
+    70% {color: rgb(231, 3, 231)}
+    75% {color: rgb(0, 17, 255)}
+    80% {color: #1FF30C}
+    85% {color: yellow}
+    90% {color: pink}
+    95% {color: blue}
+    100%{color: #1FF30C}
 /* .container {
     display: block;
     height: 200px;
