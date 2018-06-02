@@ -34,6 +34,7 @@ var sunshine = new Audio("assets/music/walkingonsunshine.mp3");
 function randomWord() {
     aryWordState = [];
     aryWord = words[Math.floor(Math.random() * words.length)];
+
     for (i = 0; i < aryWord.length; i++) {
         if (aryWord[i] == " ") {
             aryWordState.push("&nbsp;");
@@ -43,7 +44,9 @@ function randomWord() {
         document.getElementById("game-zone").innerHTML = aryWordState.join(" ");
         } 
         
-    } console.log(letterBank);
+    } 
+    console.log(words);
+    console.log(letterBank);
     console.log(aryWord);
 } 
 
@@ -167,14 +170,11 @@ function hideLetter(x) {
 // guess letter function 
 
 function guessLetter() {
-    
     for (i = 0; i < aryWord.length; i++) {
         if (aryWord[i] === letter) {  
             aryWordState[i] = letter;
         letterBank--;
         document.getElementById("game-zone").innerHTML = aryWordState.join(" ");
-        correct = true;
-        console.log(correct);
         console.log("Letters left:" + letterBank);
             if (letterBank == 0) {
                 if (aryWord == "MY GIRL") {
@@ -210,12 +210,9 @@ function guessLetter() {
                 } 
 
             }
-        } else {
-           
-            wrongLetter();
-        }
+        } 
     } 
-}
+} 
             
          
     
@@ -224,8 +221,35 @@ function guessLetter() {
 // start game 
 function quarter() {
     quarterDrop.play();
-    document.getElementById("button1").style.visibility = "show";
-    turnOffBorder();
+    document.getElementById("button1").style.visibility = "visible";
+    document.getElementById("button2").style.visibility = "visible";
+    document.getElementById("button3").style.visibility = "visible";
+    document.getElementById("button4").style.visibility = "visible";
+    document.getElementById("button5").style.visibility = "visible";
+    document.getElementById("button6").style.visibility = "visible";
+    document.getElementById("button7").style.visibility = "visible";
+    document.getElementById("button8").style.visibility = "visible";
+    document.getElementById("button9").style.visibility = "visible";
+    document.getElementById("button10").style.visibility = "visible";
+    document.getElementById("button11").style.visibility = "visible";
+    document.getElementById("button12").style.visibility = "visible";
+    document.getElementById("button13").style.visibility = "visible";
+    document.getElementById("button14").style.visibility = "visible";
+    document.getElementById("button15").style.visibility = "visible";
+    document.getElementById("button16").style.visibility = "visible";
+    document.getElementById("button17").style.visibility = "visible";
+    document.getElementById("button18").style.visibility = "visible";
+    document.getElementById("button19").style.visibility = "visible";
+    document.getElementById("button20").style.visibility = "visible";
+    document.getElementById("button21").style.visibility = "visible";
+    document.getElementById("button22").style.visibility = "visible";
+    document.getElementById("button23").style.visibility = "visible";
+    document.getElementById("button24").style.visibility = "visible";
+    document.getElementById("button25").style.visibility = "visible";
+    document.getElementById("button26").style.visibility = "visible";
+    document.getElementById("hint").style.visibility = "visible";
+    document.getElementById("hint-reveal").innerHTML = "";
+   
 }
 function wrongLetter() {
    
@@ -255,5 +279,29 @@ function songInfo(s) {
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'(I Can't Get No) Satisfaction' by The Rolling Stones";
     } if (s == 10) {
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Walking On Sunshine' by Katrina and the Waves";
+    } 
+}
+
+function revealHint() {
+    if (aryWord == "MY GIRL") {
+        document.getElementById("hint-reveal").innerHTML = "artist: The Temptations";
+    } if (aryWord == "BACK IN BLACK") {
+        document.getElementById("hint-reveal").innerHTML = "artist: AC/DC";
+    } if (aryWord == "BEAT IT") {
+        document.getElementById("hint-reveal").innerHTML = "artist: Michael Jackson";
+    } if (aryWord == "BORN TO BE WILD") {
+        document.getElementById("hint-reveal").innerHTML = "artist: Steppenwolf";
+    } if (aryWord == "I GOT YOU BABE") {
+        document.getElementById("hint-reveal").innerHTML = "artist: Sonny & Cher";
+    } if (aryWord == "I WANNA HOLD YOUR HAND") {
+        document.getElementById("hint-reveal").innerHTML = "artist: The Beatles";
+    } if (aryWord == "LUCY IN THE SKY WITH DIAMONDS") {
+        document.getElementById("hint-reveal").innerHTML = "artist: The Beatles";
+    } if (aryWord == "ROADHOUSE BLUES") {
+        document.getElementById("hint-reveal").innerHTML = "artist: The Doors";
+    } if (aryWord == "SATISFACTION") {
+        document.getElementById("hint-reveal").innerHTML = "artist: The Rolling Stones";
+    } if (aryWord == "WALKING ON SUNSHINE") {
+        document.getElementById("hint-reveal").innerHTML = "artist: Katrina and the Waves";
     } 
 }
