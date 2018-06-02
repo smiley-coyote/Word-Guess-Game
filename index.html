@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="assets/css/reset.css" type="text/css" rel="stylesheet">
     <link href="assets/css/style.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 
 
     <title>Jukebox Hangman</title>
@@ -22,12 +23,12 @@
 
     <div id=#main-container class="container">
         <div id="jukebox-main">
-            <img src="assets/images/jukebox.jpg">
+            <img src="assets/images/jukebox0.png">
             <div class="body-game">
                 <div id="game-zone">
                     Please insert quarter to begin:
                 </div>
-                <div>
+                <div class="game-button">
                     <button id="start-game" onclick="randomWord();quarter()">25&#162;</button>
                 </div>
                     <div id="box" class="keyboard">
@@ -246,9 +247,9 @@ function guessLetter() {
     for (i = 0; i < aryWord.length; i++) {
         if (aryWord[i] === letter) {  
             aryWordState[i] = letter
-        
-        document.getElementById("game-zone").innerHTML = aryWordState.join(" ");
         letterBank--;
+        document.getElementById("game-zone").innerHTML = aryWordState.join(" ");
+        
         console.log("Letters left:" + letterBank);
             if (letterBank == 0) {
                 if (aryWord == "MY GIRL") {
@@ -285,8 +286,9 @@ function guessLetter() {
 
 function quarter() {
     quarterDrop.play();
-    letterBank = 0;
+    document.getElementById("button1").style.visibility = "show";
 }
+
 
 </script>
 

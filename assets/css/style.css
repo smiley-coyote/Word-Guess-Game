@@ -3,7 +3,8 @@
   }
 
 body {
-    background-image: url('../images/brickwall.png');
+    background-image: url('../images/darkness.png');
+    font-family: 'Righteous', cursive;
 }
 
 header {
@@ -11,8 +12,9 @@ header {
     top: 0px;
     margin: 0px;
     width: 100%;
-    background-color: #fff;
+   
     height: 100px;
+
 }
 
 .container {
@@ -24,8 +26,9 @@ header {
 }
 
 .container h1 {
-    font-size: 30px;
-    padding-top: 25px;
+    font-size: 40px;
+    padding-top: 35px;
+    color: white;
 }
 
 #main-container {
@@ -36,8 +39,11 @@ header {
 #jukebox-main {
     width: 960px;
     background: white;
-    height: 650px;
+    height: 580px;
     margin-top: 30px;
+    border: 5px solid #1FF30C;
+    background-image: url('../images/darkbrick.png');
+    
 }
 #jukebox-main img {
     height: 500px;
@@ -50,16 +56,28 @@ header {
     position: relative;
     right: 40px;
     top: 100px;
-    width: 400px;
+    width: 450px;
     height: 400px;
     float: right;
     padding-top: 200px;
-    border: 2px solid gray;
+    border: 2px solid #F4F505;
+    background: #F9F9FF;
 }
 #game-zone {
     position: relative;
     bottom: 100px;
 }
+button {
+    width: 28px;
+    height: 38px;
+    margin: 1px;
+}
+#start-game {
+    width: 40px;
+    position: relative;
+    bottom: 20px;
+}
+
 
 /* .container {
     display: block;
