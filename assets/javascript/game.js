@@ -443,6 +443,7 @@ function gameOver(){
     document.getElementById("hint").style.visibility = "hidden";
     letterBank = 0;
     document.getElementById("current-song").innerHTML = "";
+    document.getElementById("hint-reveal").innerHTML = ""; 
 }
 
 function gameWin() {
@@ -475,6 +476,7 @@ function gameWin() {
     document.getElementById("button26").style.visibility = "hidden";
     document.getElementById("hint").style.visibility = "hidden";
     letterBank = 0;
+    document.getElementById("hint-reveal").innerHTML = ""; 
 }
 
 function resetGame() {
