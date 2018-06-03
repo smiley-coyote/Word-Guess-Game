@@ -15,6 +15,7 @@ var holdWord = "";
 var correct = true;
 var wins = 0;
 
+
 // song variables
 var audio = new Audio();
 var quarterDrop = new Audio("assets/music/quarterdrop.mp3");
@@ -42,11 +43,14 @@ var allAlongTheWatchtower = new Audio("assets/music/watchtower.mp3");
 
 
 
-// create random word for loop
+// pulls random word from array and replaces the letters with underlines
 function randomWord() {
     aryWordState = [];
     aryWord = words[Math.floor(Math.random() * words.length)];
-
+    var index = words.indexOf(aryWord);
+    if (index > -1) {
+        words.splice(index, 1);
+    }
     for (i = 0; i < aryWord.length; i++) {
         if (aryWord[i] == " ") {
             aryWordState.push("&nbsp;");
@@ -63,9 +67,7 @@ function randomWord() {
 } 
 
 
-// put in key buttons
-
-// hide button function and run guessLetter()
+// hides keyboard buttons and triggers guessLetter()
 
 function hideLetter(x) {
     
@@ -179,7 +181,7 @@ function hideLetter(x) {
 
 
 }
-// guess letter function 
+// guesses letter and triggers win game or lose game
 
 function guessLetter() {
     for (i = 0; i < aryWord.length; i++) {
@@ -274,11 +276,9 @@ function guessLetter() {
 
 } 
             
-         
-    
-    
 
-// start game 
+// starts game 
+
 function quarter() {
     guesses = 3;
     document.getElementById("button1").style.visibility = "visible";
@@ -315,6 +315,7 @@ function quarter() {
     
 }
 
+// displays current song title and artist
 
 function songInfo(s) {
     wins++;
@@ -370,6 +371,8 @@ function songInfo(s) {
     document.getElementById("wins").innerHTML = wins;
 }
 
+// displays current song artist
+
 function revealHint() {
     if (aryWord == "MY GIRL") {
         document.getElementById("hint-reveal").innerHTML = "artist: The Temptations";
@@ -406,9 +409,12 @@ function revealHint() {
     } 
 }
 
+// stops current song when next song starts
 function pauseSong() {
     audio.pause();
 }
+
+// game over hides the keyboard keys and stops the music resets letterBank, hint and current song
 
 function gameOver(){
     audio.pause();
@@ -446,6 +452,8 @@ function gameOver(){
     document.getElementById("hint-reveal").innerHTML = ""; 
 }
 
+// game win hides the keyboard keys resets letterBank and hint box
+
 function gameWin() {
 
     document.getElementById("button1").style.visibility = "hidden";
@@ -479,6 +487,7 @@ function gameWin() {
     document.getElementById("hint-reveal").innerHTML = ""; 
 }
 
+// resets letterBank and plays quarter drop sound
 function resetGame() {
     letterBank = 0;
     quarterDrop.play();
