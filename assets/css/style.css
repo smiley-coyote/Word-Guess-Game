@@ -61,6 +61,7 @@ header {
     animation-name: border-change;
     animation-duration: 500s;
     
+    
 }
 .noborder { border: 0; }
 #jukebox-main img {
@@ -75,7 +76,7 @@ header {
     margin-left: 450px;
     margin-top: 70px;
     width: 450px;
-    height: 430px;
+    height: 440px;
     float: right;
     padding-top: 200px;
     border: 3px solid pink;
@@ -83,6 +84,7 @@ header {
     border-radius: 4px;
     animation-name: border-change;
     animation-duration: 500s;
+
 }
 #game-zone {
     position: relative;
@@ -92,6 +94,7 @@ button {
     width: 28px;
     height: 38px;
     margin: 1px;
+    text-align: center;
 }
 #start-game {
     width: 40px;
@@ -99,7 +102,9 @@ button {
     bottom: 60px;
 }
 
-
+#start-game button {
+    text-align: center;
+}
 #current-song {
     position: absolute;
     top: 5%;

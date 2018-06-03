@@ -1,8 +1,9 @@
 // game variables 
-var words = ["MY GIRL", "BACK IN BLACK", "BEAT IT", "BORN TO BE WILD", "I GOT YOU BABE", "I WANNA HOLD YOUR HAND", 
+var words = ["MY GIRL", "BACK IN BLACK", "BEAT IT", "BORN TO BE WILD", "I GOT YOU BABE",  
 "BORN TO BE WILD", "I GOT YOU BABE", "I WANNA HOLD YOUR HAND", "LUCY IN THE SKY WITH DIAMONDS", "ROADHOUSE BLUES", 
 "SATISFACTION", "WALKING ON SUNSHINE", "BILLIE JEAN", "HIT THE ROAD JACK", "I GET AROUND", "LIGHT MY FIRE", 
-"SUNSHINE OF YOUR LOVE", "ALL ALONG THE WATCHTOWER"];
+"SUNSHINE OF YOUR LOVE", "ALL ALONG THE WATCHTOWER", "HOUSE OF THE RISING SUN", "ANOTHER ONE BITES THE DUST",
+"SUMMER IN THE CITY"];
 var aryGuesses = [];
 var aryWord = words[0].split("");
 var letter = "";
@@ -37,6 +38,9 @@ var iGetAround = new Audio("assets/music/igetaround.mp3");
 var lightMyFire = new Audio("assets/music/lightmyfire.mp3");
 var sunshineOfYourLove = new Audio("assets/music/sunshineofyourlove.mp3");
 var allAlongTheWatchtower = new Audio("assets/music/watchtower.mp3");
+var houseOfRisingSun = new Audio("assets/music/houseofrisingsun.mp3");
+var bitesTheDust = new Audio ("assets/music/onebitesthedust.mp3");
+var summerInTheCity = new Audio ("assets/music/summerinthecity.mp3");
 
 
 
@@ -261,6 +265,18 @@ function guessLetter() {
                     pauseSong();
                     audio = allAlongTheWatchtower;
                     songInfo(16);
+                } if (aryWord == "HOUSE OF THE RISING SUN") {
+                    pauseSong();
+                    audio = houseOfRisingSun;
+                    songInfo(17);
+                } if (aryWord == "ANOTHER ONE BITES THE DUST") {
+                    pauseSong();
+                    audio = bitesTheDust;
+                    songInfo(18);
+                } if (aryWord == "SUMMER IN THE CITY") {
+                    pauseSong();
+                    audio = summerInTheCity;
+                    songInfo(19);
                 } 
 
             }
@@ -367,6 +383,15 @@ function songInfo(s) {
     } if (s == 16) {
         audio.play();
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'All Along The Watchtower' by Jimi Hendrix";
+    } if (s == 17) {
+        audio.play();
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'House of the Rising Sun' by The Animals";
+    } if (s == 18) {
+        audio.play();
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Another One Bites The Dust' by Queen";
+    } if (s == 19) {
+        audio.play();
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Summer In The City' by The Lovin' Spoonful";
     } 
     document.getElementById("wins").innerHTML = wins;
 }
@@ -406,6 +431,12 @@ function revealHint() {
         document.getElementById("hint-reveal").innerHTML = "artist: Katrina & The Waves";
     } if (aryWord == "SATISFACTION") {
         document.getElementById("hint-reveal").innerHTML = "artist: The Rolling Stones";
+    } if (aryWord == "HOUSE OF THE RISING SUN") {
+        document.getElementById("hint-reveal").innerHTML = "artist: The Animals";
+    } if (aryWord == "ANOTHER ONE BITES THE DUST") {
+        document.getElementById("hint-reveal").innerHTML = "artist: Queen";
+    } if (aryWord == "SUMMER IN THE CITY") {
+        document.getElementById("hint-reveal").innerHTML = "artist: The Lovin' Spoonful";
     } 
 }
 
