@@ -184,7 +184,7 @@ function guessLetter() {
         console.log("Letters left:" + letterBank);
        
             if (letterBank == 0) {
-                
+                gameWin();
                 if (aryWord == "MY GIRL") {
                     pauseSong();
                     audio = myGirl;
@@ -349,6 +349,37 @@ function pauseSong() {
 
 function gameOver(){
     document.getElementById("game-zone").innerHTML = "OUT OF ORDER"
+    document.getElementById("button1").style.visibility = "hidden";
+    document.getElementById("button2").style.visibility = "hidden";
+    document.getElementById("button3").style.visibility = "hidden";
+    document.getElementById("button4").style.visibility = "hidden";
+    document.getElementById("button5").style.visibility = "hidden";
+    document.getElementById("button6").style.visibility = "hidden";
+    document.getElementById("button7").style.visibility = "hidden";
+    document.getElementById("button8").style.visibility = "hidden";
+    document.getElementById("button9").style.visibility = "hidden";
+    document.getElementById("button10").style.visibility = "hidden";
+    document.getElementById("button11").style.visibility = "hidden";
+    document.getElementById("button12").style.visibility = "hidden";
+    document.getElementById("button13").style.visibility = "hidden";
+    document.getElementById("button14").style.visibility = "hidden";
+    document.getElementById("button15").style.visibility = "hidden";
+    document.getElementById("button16").style.visibility = "hidden";
+    document.getElementById("button17").style.visibility = "hidden";
+    document.getElementById("button18").style.visibility = "hidden";
+    document.getElementById("button19").style.visibility = "hidden";
+    document.getElementById("button20").style.visibility = "hidden";
+    document.getElementById("button21").style.visibility = "hidden";
+    document.getElementById("button22").style.visibility = "hidden";
+    document.getElementById("button23").style.visibility = "hidden";
+    document.getElementById("button24").style.visibility = "hidden";
+    document.getElementById("button25").style.visibility = "hidden";
+    document.getElementById("button26").style.visibility = "hidden";
+    document.getElementById("hint").style.visibility = "hidden";
+}
+
+function gameWin() {
+
     document.getElementById("button1").style.visibility = "hidden";
     document.getElementById("button2").style.visibility = "hidden";
     document.getElementById("button3").style.visibility = "hidden";
