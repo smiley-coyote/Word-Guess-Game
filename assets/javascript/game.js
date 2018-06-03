@@ -186,43 +186,43 @@ function guessLetter() {
             if (letterBank == 0) {
                 
                 if (aryWord == "MY GIRL") {
-                    audio.pause();
+                    pauseSong();
                     audio = myGirl;
                     songInfo(1);
                 } if (aryWord == "BACK IN BLACK") {
-                    audio.pause();
+                    pauseSong();
                     audio = backInBlack;
                     songInfo(2);
                 } if (aryWord == "BEAT IT") {
-                    audio.pause();
+                    pauseSong();
                     audio = beatIt;
                     songInfo(3);
                 } if (aryWord == "BORN TO BE WILD") {
-                    audio.pause();
+                    pauseSong();
                     audio = bornWild;
                     songInfo(4);
                 } if (aryWord == "I GOT YOU BABE") {
-                    audio.pause();
+                    pauseSong();
                     audio = gotYouBabe;
                     songInfo(5);
                 } if (aryWord == "I WANNA HOLD YOUR HAND") {
-                    audio.pause();
+                    pauseSong();
                     audio = holdYourHand;
                     songInfo(6);
                 } if (aryWord == "LUCY IN THE SKY WITH DIAMONDS") {
-                    audio.pause();
+                    pauseSong();
                     audio = lucySky;
                     songInfo(7);
                 } if (aryWord == "ROADHOUSE BLUES") {
-                    audio.pause();
+                    pauseSong();
                     audio = roadHouseBlues;
                     songInfo(8);
                 } if (aryWord == "SATISFACTION") {
-                    audio.pause();
+                    pauseSong();
                     audio = satisfaction;
                     songInfo(9);
                 } if (aryWord == "WALKING ON SUNSHINE") {
-                    audio.pause();
+                    pauseSong();
                     audio = sunshine;
                     songInfo(10);
                 } 
@@ -341,4 +341,8 @@ function revealHint() {
     } if (aryWord == "WALKING ON SUNSHINE") {
         document.getElementById("hint-reveal").innerHTML = "artist: Katrina and the Waves";
     } 
+}
+
+function pauseSong() {
+    audio.pause();
 }
