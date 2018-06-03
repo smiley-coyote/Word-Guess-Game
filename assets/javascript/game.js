@@ -1,7 +1,8 @@
 // game variables 
 var words = ["MY GIRL", "BACK IN BLACK", "BEAT IT", "BORN TO BE WILD", "I GOT YOU BABE", "I WANNA HOLD YOUR HAND", 
 "BORN TO BE WILD", "I GOT YOU BABE", "I WANNA HOLD YOUR HAND", "LUCY IN THE SKY WITH DIAMONDS", "ROADHOUSE BLUES", 
-"SATISFACTION", "WALKING ON SUNSHINE"];
+"SATISFACTION", "WALKING ON SUNSHINE", "BILLIE JEAN", "HIT THE ROAD JACK", "I GET AROUND", "LIGHT MY FIRE", 
+"SUNSHINE OF YOUR LOVE", "ALL ALONG THE WATCHTOWER"];
 var aryGuesses = [];
 var aryWord = words[0].split("");
 var letter = "";
@@ -17,6 +18,7 @@ var wins = 0;
 // song variables
 var audio = new Audio();
 var quarterDrop = new Audio("assets/music/quarterdrop.mp3");
+var recordScratch = new Audio("assets/music/recordscratch.mp3");
 var myGirl = new Audio("assets/music/mygirl.mp3");
 var backInBlack = new Audio("assets/music/backinblack.mp3");
 var beatIt = new Audio("assets/music/beatit.mp3");
@@ -28,7 +30,12 @@ var myGirl = new Audio("assets/music/mygirl.mp3");
 var roadHouseBlues = new Audio("assets/music/roadhouseblues.mp3");
 var satisfaction = new Audio("assets/music/satisfaction.mp3");
 var sunshine = new Audio("assets/music/walkingonsunshine.mp3");
-var recordScratch = new Audio("assets/music/recordscrath.mp3");
+var billieJean = new Audio("assets/music/billiejean.mp3");
+var hitTheRoadJack = new Audio("assets/music/hittheroadjack.mp3");
+var iGetAround = new Audio("assets/music/igetaround.mp3");
+var lightMyFire = new Audio("assets/music/lightmyfire.mp3");
+var sunshineOfYourLove = new Audio("assets/music/sunshineofyourlove.mp3");
+var allAlongTheWatchtower = new Audio("assets/music/watchtower.mp3");
 
 
 
@@ -228,6 +235,30 @@ function guessLetter() {
                     pauseSong();
                     audio = sunshine;
                     songInfo(10);
+                } if (aryWord == "BILLIE JEAN") {
+                    pauseSong();
+                    audio = billieJean;
+                    songInfo(11);
+                } if (aryWord == "HIT THE ROAD JACK") {
+                    pauseSong();
+                    audio = hitTheRoadJack;
+                    songInfo(12);
+                } if (aryWord == "I GET AROUND") {
+                    pauseSong();
+                    audio = iGetAround;
+                    songInfo(13);
+                } if (aryWord == "LIGHT MY FIRE") {
+                    pauseSong();
+                    audio = lightMyFire;
+                    songInfo(14);
+                } if (aryWord == "SUNSHINE OF YOUR LOVE") {
+                    pauseSong();
+                    audio = sunshineOfYourLove;
+                    songInfo(15);
+                } if (aryWord == "ALL ALONG THE WATCHTOWER") {
+                    pauseSong();
+                    audio = allAlongTheWatchtower;
+                    songInfo(16);
                 } 
 
             }
@@ -317,6 +348,24 @@ function songInfo(s) {
     } if (s == 10) {
         audio.play();
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Walking On Sunshine' by Katrina and the Waves";
+    } if (s == 11) {
+        audio.play();
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Billie Jean' by Michael Jackson";
+    } if (s == 12) {
+        audio.play();
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Hit The Road Jack' by Ray Charles";
+    } if (s == 13) {
+        audio.play();
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'I Get Around' by The Beach Boys";
+    } if (s == 14) {
+        audio.play();
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Light My Fire' by The Doors";
+    } if (s == 15) {
+        audio.play();
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Sunshine of Your Love' by Cream";
+    } if (s == 16) {
+        audio.play();
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'All Along The Watchtower' by Jimi Hendrix";
     } 
     document.getElementById("wins").innerHTML = wins;
 }
@@ -338,10 +387,22 @@ function revealHint() {
         document.getElementById("hint-reveal").innerHTML = "artist: The Beatles";
     } if (aryWord == "ROADHOUSE BLUES") {
         document.getElementById("hint-reveal").innerHTML = "artist: The Doors";
+    } if (aryWord == "BILLIE JEAN") {
+        document.getElementById("hint-reveal").innerHTML = "artist: Michael Jackson";
+    } if (aryWord == "HIT THE ROAD JACK") {
+        document.getElementById("hint-reveal").innerHTML = "artist: Ray Charles";
+    } if (aryWord == "I GET AROUND") {
+        document.getElementById("hint-reveal").innerHTML = "artist: The Beach Boys";
+    } if (aryWord == "LIGHT MY FIRE") {
+        document.getElementById("hint-reveal").innerHTML = "artist: The Doors";
+    } if (aryWord == "SUNSHINE OF YOUR LOVE") {
+        document.getElementById("hint-reveal").innerHTML = "artist: Cream";
+    } if (aryWord == "ALL ALONG THE WATCHTOWER") {
+        document.getElementById("hint-reveal").innerHTML = "artist: Jimi Hendrix";
+    } if (aryWord == "WALKING ON SUNSHINE") {
+        document.getElementById("hint-reveal").innerHTML = "artist: Katrina & The Waves";
     } if (aryWord == "SATISFACTION") {
         document.getElementById("hint-reveal").innerHTML = "artist: The Rolling Stones";
-    } if (aryWord == "WALKING ON SUNSHINE") {
-        document.getElementById("hint-reveal").innerHTML = "artist: Katrina and the Waves";
     } 
 }
 
