@@ -12,6 +12,7 @@ var currentSong = "";
 var letterBank = 0;
 var holdWord = "";
 var correct = true;
+var wins = 0;
 
 // song variables
 var audio = new Audio();
@@ -27,7 +28,9 @@ var myGirl = new Audio("assets/music/mygirl.mp3");
 var roadHouseBlues = new Audio("assets/music/roadhouseblues.mp3");
 var satisfaction = new Audio("assets/music/satisfaction.mp3");
 var sunshine = new Audio("assets/music/walkingonsunshine.mp3");
-var wins = 0;
+var recordScratch = new Audio("assets/music/recordscrath.mp3");
+
+
 
 
 
@@ -246,7 +249,6 @@ function guessLetter() {
 
 // start game 
 function quarter() {
-    quarterDrop.play();
     guesses = 3;
     document.getElementById("button1").style.visibility = "visible";
     document.getElementById("button2").style.visibility = "visible";
@@ -279,7 +281,7 @@ function quarter() {
     document.getElementById("guesses-left").innerHTML = guesses;
     document.getElementById("guess-box").style.visibility = "visible";
     document.getElementById("wins-box").style.visibility = "visible";
-   
+    
 }
 
 
@@ -349,6 +351,7 @@ function pauseSong() {
 
 function gameOver(){
     audio.pause();
+    recordScratch.play();
     document.getElementById("game-zone").innerHTML = "OUT OF ORDER"
     document.getElementById("button1").style.visibility = "hidden";
     document.getElementById("button2").style.visibility = "hidden";
@@ -411,4 +414,9 @@ function gameWin() {
     document.getElementById("button26").style.visibility = "hidden";
     document.getElementById("hint").style.visibility = "hidden";
     letterBank = 0;
+}
+
+function resetGame() {
+    letterBank = 0;
+    quarterDrop.play();
 }

@@ -37,7 +37,7 @@
                         <h4>Please insert coin to begin:</h4>
                     </div>
                     <div class="game-button">
-                        <button id="start-game" onclick="randomWord();quarter()">25&#162;</button>
+                        <button id="start-game" onclick="setTimeout(randomWord, 2000);setTimeout(quarter, 2000);resetGame()">25&#162;</button>
                     </div>
                         <div id="box" class="keyboard">
                                 <button id="button1" value="A" onclick="hideLetter(1)">A</button>
