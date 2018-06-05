@@ -144,6 +144,12 @@ button {
 #hintbox button {
     visibility: hidden;
 }
+
+#message {
+    position: relative;
+    bottom: 120px;
+    visibility: show;
+}
 @keyframes border-change {
     5% {border-color: yellow}
     10% {border-color: rgb(231, 3, 231)}

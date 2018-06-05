@@ -328,6 +328,7 @@ function quarter() {
     document.getElementById("guesses-left").innerHTML = guesses;
     document.getElementById("guess-box").style.visibility = "visible";
     document.getElementById("wins-box").style.visibility = "visible";
+
     
 }
 
