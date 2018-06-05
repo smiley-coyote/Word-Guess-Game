@@ -327,8 +327,7 @@ function quarter() {
     document.getElementById("hint-reveal").innerHTML = "";
     document.getElementById("guesses-left").innerHTML = guesses;
     document.getElementById("guess-box").style.visibility = "visible";
-    document.getElementById("wins-box").style.visibility = "visible";
-
+    document.getElementById("start-game").style.visibility = "visible";
     
 }
 
@@ -523,4 +522,5 @@ function gameWin() {
 function resetGame() {
     letterBank = 0;
     quarterDrop.play();
+    document.getElementById("start-game").style.visibility = "hidden";
 }
