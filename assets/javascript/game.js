@@ -328,6 +328,7 @@ function quarter() {
     document.getElementById("guesses-left").innerHTML = guesses;
     document.getElementById("guess-box").style.visibility = "visible";
     document.getElementById("start-game").style.visibility = "visible";
+    document.getElementById("wins-box").style.visibility = "visible";
     
 }
 
@@ -335,6 +336,7 @@ function quarter() {
 
 function songInfo(s) {
     wins++;
+    document.getElementById("wins").innerHTML = wins;
     if (s == 1) {
         audio.play();
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'My Girl' by The Temptations";
@@ -393,7 +395,7 @@ function songInfo(s) {
         audio.play();
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Summer In The City' by The Lovin' Spoonful";
     } 
-    document.getElementById("wins").innerHTML = wins;
+    
 }
 
 // displays current song artist
