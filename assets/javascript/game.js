@@ -3,7 +3,8 @@ var words = ["MY GIRL", "BACK IN BLACK", "BEAT IT", "BORN TO BE WILD",
 "I GOT YOU BABE", "I WANNA HOLD YOUR HAND", "LUCY IN THE SKY WITH DIAMONDS", "ROADHOUSE BLUES", 
 "SATISFACTION", "WALKING ON SUNSHINE", "BILLIE JEAN", "HIT THE ROAD JACK", "I GET AROUND", "LIGHT MY FIRE", 
 "SUNSHINE OF YOUR LOVE", "ALL ALONG THE WATCHTOWER", "HOUSE OF THE RISING SUN", "ANOTHER ONE BITES THE DUST",
-"SUMMER IN THE CITY"];
+"SUMMER IN THE CITY", "THE AGE OF AQUARIUS", "GOD ONLY KNOWS", "MRS. ROBINSON", "MR. TAMBOURINE MAN", "SMELLS LIKE TEEN SPIRIT", 
+"TIME OF THE SEASON", "FOR WHAT IT\'S WORTH"];
 var aryGuesses = [];
 var aryWord = words[0].split("");
 var letter = "";
@@ -41,6 +42,13 @@ var allAlongTheWatchtower = new Audio("assets/music/watchtower.mp3");
 var houseOfRisingSun = new Audio("assets/music/houseofrisingsun.mp3");
 var bitesTheDust = new Audio ("assets/music/onebitesthedust.mp3");
 var summerInTheCity = new Audio ("assets/music/summerinthecity.mp3");
+var ageAquarius = new Audio ("assets/music/ageofaquarius.mp3");
+var godOnlyKnows = new Audio ("assets/music/godonlyknows.mp3");
+var mrsRobinson = new Audio ("assets/music/mrsrobinson.mp3");
+var mrTambourineMan = new Audio ("assets/music/mrtambourineman.mp3");
+var teenSpirit = new Audio ("assets/music/smellsliketeenspirit.mp3");
+var timeSeason = new Audio ("assets/music/timeoftheseason.mp3");
+var whatItsWorth = new Audio ("assets/music/whatitsworth.mp3");
 
 
 
@@ -58,7 +66,12 @@ function randomWord() {
     for (i = 0; i < aryWord.length; i++) {
         if (aryWord[i] == " ") {
             aryWordState.push("&nbsp;");
-        } else {
+        }else if (aryWord[i] == "\'"){
+            aryWordState.push("\'");
+        }else if (aryWord[i] == "."){
+            aryWordState.push(".");
+        }
+        else {
         aryWordState.push("_");
         letterBank++;
         document.getElementById("game-zone").innerHTML = aryWordState.join(" ");
@@ -277,6 +290,35 @@ function guessLetter() {
                     pauseSong();
                     audio = summerInTheCity;
                     songInfo(19);
+                } if (aryWord == "THE AGE OF AQUARIUS") {
+                    pauseSong();
+                    audio = ageAquarius;
+                    songInfo(20);
+                } 
+                if (aryWord == "GOD ONLY KNOWS") {
+                    pauseSong();
+                    audio = godOnlyKnows;
+                    songInfo(21);
+                } if (aryWord == "MRS. ROBINSON") {
+                    pauseSong();
+                    audio = mrsRobinson;
+                    songInfo(22);
+                } if (aryWord == "MR. TAMBOURINE MAN") {
+                    pauseSong();
+                    audio = mrTambourineMan;
+                    songInfo(23);
+                } if (aryWord == "SMELLS LIKE TEEN SPIRIT") {
+                    pauseSong();
+                    audio = teenSpirit;
+                    songInfo(24);
+                } if (aryWord == "TIME OF THE SEASON") {
+                    pauseSong();
+                    audio = timeSeason;
+                    songInfo(25);
+                } if (aryWord == "FOR WHAT IT\'S WORTH") {
+                    pauseSong();
+                    audio = whatItsWorth;
+                    songInfo(26);
                 } 
 
             }
@@ -363,7 +405,7 @@ function songInfo(s) {
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Roadhouse Blues' by The Doors";
     } if (s == 9) {
         audio.play();
-        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'(I Can't Get No) Satisfaction' by The Rolling Stones";
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'(I Can\'t Get No) Satisfaction' by The Rolling Stones";
     } if (s == 10) {
         audio.play();
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Walking On Sunshine' by Katrina and the Waves";
@@ -394,6 +436,27 @@ function songInfo(s) {
     } if (s == 19) {
         audio.play();
         document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Summer In The City' by The Lovin' Spoonful";
+    } if (s == 20) {
+        audio.play();
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'The Age of Aquarius' by The 5th Dimension";
+    } if (s == 21) {
+        audio.play();
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'God Only Knows' by The Beach Boys";
+    } if (s == 22) {
+        audio.play();
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Mrs. Robinson' by Simon & Garfunkel";
+    } if (s == 23) {
+        audio.play();
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Mr. Tambourine Man' by The Byrds";
+    } if (s == 24) {
+        audio.play();
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Smells Like Teen Spirit' by Nirvana";
+    } if (s == 25) {
+        audio.play();
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'Time of The Season' by The Zombies";
+    } if (s == 26) {
+        audio.play();
+        document.getElementById("current-song").innerHTML = "Now playing:" + "<br>" + "'For What It\'s Worth' by Buffalo Springfield";
     } 
     
 }
@@ -439,6 +502,20 @@ function revealHint() {
         document.getElementById("hint-reveal").innerHTML = "artist: Queen";
     } if (aryWord == "SUMMER IN THE CITY") {
         document.getElementById("hint-reveal").innerHTML = "artist: The Lovin' Spoonful";
+    } if (aryWord == "THE AGE OF AQUARIUS") {
+        document.getElementById("hint-reveal").innerHTML = "artist: The 5th Dimension";
+    } if (aryWord == "GOD ONLY KNOWS") {
+        document.getElementById("hint-reveal").innerHTML = "artist: The Beach Boys";
+    } if (aryWord == "MRS. ROBINSON") {
+        document.getElementById("hint-reveal").innerHTML = "artist: Simon & Garfunkel";
+    } if (aryWord == "MR. TAMBOURINE MAN") {
+        document.getElementById("hint-reveal").innerHTML = "artist: The Bryds";
+    } if (aryWord == "SMELLS LIKE TEEN SPIRIT") {
+        document.getElementById("hint-reveal").innerHTML = "artist: Nirvana";
+    } if (aryWord == "TIME OF THE SEASON") {
+        document.getElementById("hint-reveal").innerHTML = "artist: The Zombies";
+    } if (aryWord == "FOR WHAT IT\'S WORTH") {
+        document.getElementById("hint-reveal").innerHTML = "artist: Buffalo Springfield";
     } 
 }
 
