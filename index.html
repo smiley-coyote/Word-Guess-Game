@@ -38,37 +38,43 @@
                 </div>
                 <div class="game-button">
                     <button id="start-game" onclick="setTimeout(randomWord, 2000);setTimeout(quarter, 2000);resetGame()">25&#162;</button>
+                    <div id="guess-button">
+                            <p>Guess Word:</p>
+                            <input id="guess"></input><button onclick="submitGuess()" id="submit-guess">Submit</button>
+                        </div>
+                        <div id="results">Correct!</div>
                 </div>
+               
                 <div id="box" class="keyboard">
-                    <button id="button1" value="A" onclick="hideLetter(1)">A</button>
-                    <button id="button2" value="B" onclick="hideLetter(2)">B</button>
-                    <button id="button3" value="C" onclick="hideLetter(3)">C</button>
-                    <button id="button4" value="D" onclick="hideLetter(4)">D</button>
-                    <button id="button5" value="E" onclick="hideLetter(5)">E</button>
-                    <button id="button6" value="F" onclick="hideLetter(6)">F</button>
-                    <button id="button7" value="G" onclick="hideLetter(7)">G</button>
-                    <button id="button8" value="H" onclick="hideLetter(8)">H</button>
-                    <button id="button9" value="I" onclick="hideLetter(9)">I</button>
-                    <button id="button10" value="J" onclick="hideLetter(10)">J</button>
-                    <button id="button11" value="K" onclick="hideLetter(11)">K</button>
-                    <button id="button12" value="L" onclick="hideLetter(12)">L</button>
-                    <button id="button13" value="M" onclick="hideLetter(13)">M</button>
-                    <button id="button14" value="N" onclick="hideLetter(14)">N</button>
-                    <button id="button15" value="O" onclick="hideLetter(15)">O</button>
-                    <button id="button16" value="P" onclick="hideLetter(16)">P</button>
-                    <button id="button17" value="Q" onclick="hideLetter(17)">Q</button>
-                    <button id="button18" value="R" onclick="hideLetter(18)">R</button>
-                    <button id="button19" value="S" onclick="hideLetter(19)">S</button>
-                    <button id="button20" value="T" onclick="hideLetter(20)">T</button>
-                    <button id="button21" value="U" onclick="hideLetter(21)">U</button>
-                    <button id="button22" value="V" onclick="hideLetter(22)">V</button>
-                    <button id="button23" value="W" onclick="hideLetter(23)">W</button>
-                    <button id="button24" value="X" onclick="hideLetter(24)">X</button>
-                    <button id="button25" value="Y" onclick="hideLetter(25)">Y</button>
-                    <button id="button26" value="Z" onclick="hideLetter(26)">Z</button>
+                    <button class="game-item" id="button1" value="A" onclick="hideLetter(event)">A</button>
+                    <button class="game-item" id="button2" value="B" onclick="hideLetter(event)">B</button>
+                    <button class="game-item" id="button3" value="C" onclick="hideLetter(event)">C</button>
+                    <button class="game-item" id="button4" value="D" onclick="hideLetter(event)">D</button>
+                    <button class="game-item" id="button5" value="E" onclick="hideLetter(event)">E</button>
+                    <button class="game-item" id="button6" value="F" onclick="hideLetter(event)">F</button>
+                    <button class="game-item" id="button7" value="G" onclick="hideLetter(event)">G</button>
+                    <button class="game-item" id="button8" value="H" onclick="hideLetter(event)">H</button>
+                    <button class="game-item" id="button9" value="I" onclick="hideLetter(event)">I</button>
+                    <button class="game-item" id="button10" value="J" onclick="hideLetter(event)">J</button>
+                    <button class="game-item" id="button11" value="K" onclick="hideLetter(event)">K</button>
+                    <button class="game-item" id="button12" value="L" onclick="hideLetter(event)">L</button>
+                    <button class="game-item" id="button13" value="M" onclick="hideLetter(event)">M</button>
+                    <button class="game-item" id="button14" value="N" onclick="hideLetter(event)">N</button>
+                    <button class="game-item" id="button15" value="O" onclick="hideLetter(event)">O</button>
+                    <button class="game-item" id="button16" value="P" onclick="hideLetter(event)">P</button>
+                    <button class="game-item" id="button17" value="Q" onclick="hideLetter(event)">Q</button>
+                    <button class="game-item" id="button18" value="R" onclick="hideLetter(event)">R</button>
+                    <button class="game-item" id="button19" value="S" onclick="hideLetter(event)">S</button>
+                    <button class="game-item" id="button20" value="T" onclick="hideLetter(event)">T</button>
+                    <button class="game-item" id="button21" value="U" onclick="hideLetter(event)">U</button>
+                    <button class="game-item" id="button22" value="V" onclick="hideLetter(event)">V</button>
+                    <button class="game-item" id="button23" value="W" onclick="hideLetter(event)">W</button>
+                    <button class="game-item" id="button24" value="X" onclick="hideLetter(event)">X</button>
+                    <button class="game-item" id="button25" value="Y" onclick="hideLetter(event)">Y</button>
+                    <button class="game-item" id="button26" value="Z" onclick="hideLetter(event)">Z</button>
                 </div>
                 <div id="hintbox">
-                    <button id="hint" onclick="revealHint()">hint</button>
+                    <button class="game-item" id="hint" onclick="revealHint()">hint</button>
                     <div id="hint-reveal"></div>
                 </div>
                 <div id="guess-box">Guesses: <div id="guesses-left"></div></div>

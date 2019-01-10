@@ -86,117 +86,10 @@ function randomWord() {
 
 // hides keyboard buttons and triggers guessLetter()
 
-function hideLetter(x) {
-    
-    if (x === 1) {
-       document.getElementById("button1").style.visibility = "hidden";
-       letter = document.getElementById("button1").value;
-       guessLetter();
-   } if (x === 2) {
-       document.getElementById("button2").style.visibility = "hidden";
-       letter = document.getElementById("button2").value; 
-       guessLetter();
-   }if (x === 3) {
-       document.getElementById("button3").style.visibility = "hidden";
-       letter = document.getElementById("button3").value;
-       guessLetter();
-   }if (x === 4) {
-       document.getElementById("button4").style.visibility = "hidden";
-       letter = document.getElementById("button4").value;
-       guessLetter();
-   }if (x === 5) {
-       document.getElementById("button5").style.visibility = "hidden";
-       letter = document.getElementById("button5").value;
-       guessLetter();
-   }if (x === 6) {
-       document.getElementById("button6").style.visibility = "hidden";
-       letter = document.getElementById("button6").value;
-       guessLetter();
-   }if (x === 7) {
-       document.getElementById("button7").style.visibility = "hidden";
-       letter = document.getElementById("button7").value;
-       guessLetter();
-   }if (x === 8) {
-       document.getElementById("button8").style.visibility = "hidden";
-       letter = document.getElementById("button8").value;
-       guessLetter();
-   }if (x === 9) {
-       document.getElementById("button9").style.visibility = "hidden";
-       letter = document.getElementById("button9").value;
-       guessLetter();
-   }if (x === 10) {
-       document.getElementById("button10").style.visibility = "hidden";
-       letter = document.getElementById("button10").value;
-       guessLetter();
-   }if (x === 11) {
-       document.getElementById("button11").style.visibility = "hidden";
-       letter = document.getElementById("button11").value;
-       guessLetter();
-   }if (x === 12) {
-       document.getElementById("button12").style.visibility = "hidden";
-       letter = document.getElementById("button12").value;
-       guessLetter();
-   }if (x === 13) {
-       document.getElementById("button13").style.visibility = "hidden";
-       letter = document.getElementById("button13").value;
-       guessLetter();
-   }if (x === 14) {
-       document.getElementById("button14").style.visibility = "hidden";
-       letter = document.getElementById("button14").value;
-       guessLetter();
-   }if (x === 15) {
-       document.getElementById("button15").style.visibility = "hidden";
-       letter = document.getElementById("button15").value;
-       guessLetter();
-   }if (x === 16) {
-       document.getElementById("button16").style.visibility = "hidden";
-       letter = document.getElementById("button16").value;
-       guessLetter();
-   }if (x === 17) {
-       document.getElementById("button17").style.visibility = "hidden";
-       letter = document.getElementById("button17").value;
-       guessLetter();
-   }if (x === 18) {
-       document.getElementById("button18").style.visibility = "hidden";
-       letter = document.getElementById("button18").value;
-       guessLetter();
-   }if (x === 19) {
-       document.getElementById("button19").style.visibility = "hidden";
-       letter = document.getElementById("button19").value;
-       guessLetter();
-   }if (x === 20) {
-       document.getElementById("button20").style.visibility = "hidden";
-       letter = document.getElementById("button20").value;
-       guessLetter();
-   }if (x === 21) {
-       document.getElementById("button21").style.visibility = "hidden";
-       letter = document.getElementById("button21").value;
-       guessLetter();
-   }if (x === 22) {
-       document.getElementById("button22").style.visibility = "hidden";
-       letter = document.getElementById("button22").value;
-       guessLetter();
-   }if (x === 23) {
-       document.getElementById("button23").style.visibility = "hidden";
-       letter = document.getElementById("button23").value;
-       guessLetter();
-   }if (x === 24) {
-       document.getElementById("button24").style.visibility = "hidden";
-       letter = document.getElementById("button24").value;
-       guessLetter();
-   }if (x === 25) {
-       document.getElementById("button25").style.visibility = "hidden";
-       letter = document.getElementById("button25").value;
-       guessLetter();
-   }if (x === 26) {
-       document.getElementById("button26").style.visibility = "hidden";
-       letter = document.getElementById("button26").value;
-       guessLetter();
-   } 
-
-
-
-
+function hideLetter(event) {
+    event.currentTarget.style.visibility = "hidden";
+    letter = event.currentTarget.value;
+    guessLetter();
 }
 // guesses letter and triggers win game or lose game
 
@@ -214,112 +107,7 @@ function guessLetter() {
        
             if (letterBank == 0) {
                 gameWin();
-                if (aryWord == "MY GIRL") {
-                    pauseSong();
-                    audio = myGirl;
-                    songInfo(1);
-                } if (aryWord == "BACK IN BLACK") {
-                    pauseSong();
-                    audio = backInBlack;
-                    songInfo(2);
-                } if (aryWord == "BEAT IT") {
-                    pauseSong();
-                    audio = beatIt;
-                    songInfo(3);
-                } if (aryWord == "BORN TO BE WILD") {
-                    pauseSong();
-                    audio = bornWild;
-                    songInfo(4);
-                } if (aryWord == "I GOT YOU BABE") {
-                    pauseSong();
-                    audio = gotYouBabe;
-                    songInfo(5);
-                } if (aryWord == "I WANNA HOLD YOUR HAND") {
-                    pauseSong();
-                    audio = holdYourHand;
-                    songInfo(6);
-                } if (aryWord == "LUCY IN THE SKY WITH DIAMONDS") {
-                    pauseSong();
-                    audio = lucySky;
-                    songInfo(7);
-                } if (aryWord == "ROADHOUSE BLUES") {
-                    pauseSong();
-                    audio = roadHouseBlues;
-                    songInfo(8);
-                } if (aryWord == "SATISFACTION") {
-                    pauseSong();
-                    audio = satisfaction;
-                    songInfo(9);
-                } if (aryWord == "WALKING ON SUNSHINE") {
-                    pauseSong();
-                    audio = sunshine;
-                    songInfo(10);
-                } if (aryWord == "BILLIE JEAN") {
-                    pauseSong();
-                    audio = billieJean;
-                    songInfo(11);
-                } if (aryWord == "HIT THE ROAD JACK") {
-                    pauseSong();
-                    audio = hitTheRoadJack;
-                    songInfo(12);
-                } if (aryWord == "I GET AROUND") {
-                    pauseSong();
-                    audio = iGetAround;
-                    songInfo(13);
-                } if (aryWord == "LIGHT MY FIRE") {
-                    pauseSong();
-                    audio = lightMyFire;
-                    songInfo(14);
-                } if (aryWord == "SUNSHINE OF YOUR LOVE") {
-                    pauseSong();
-                    audio = sunshineOfYourLove;
-                    songInfo(15);
-                } if (aryWord == "ALL ALONG THE WATCHTOWER") {
-                    pauseSong();
-                    audio = allAlongTheWatchtower;
-                    songInfo(16);
-                } if (aryWord == "HOUSE OF THE RISING SUN") {
-                    pauseSong();
-                    audio = houseOfRisingSun;
-                    songInfo(17);
-                } if (aryWord == "ANOTHER ONE BITES THE DUST") {
-                    pauseSong();
-                    audio = bitesTheDust;
-                    songInfo(18);
-                } if (aryWord == "SUMMER IN THE CITY") {
-                    pauseSong();
-                    audio = summerInTheCity;
-                    songInfo(19);
-                } if (aryWord == "THE AGE OF AQUARIUS") {
-                    pauseSong();
-                    audio = ageAquarius;
-                    songInfo(20);
-                } 
-                if (aryWord == "GOD ONLY KNOWS") {
-                    pauseSong();
-                    audio = godOnlyKnows;
-                    songInfo(21);
-                } if (aryWord == "MRS. ROBINSON") {
-                    pauseSong();
-                    audio = mrsRobinson;
-                    songInfo(22);
-                } if (aryWord == "MR. TAMBOURINE MAN") {
-                    pauseSong();
-                    audio = mrTambourineMan;
-                    songInfo(23);
-                } if (aryWord == "SMELLS LIKE TEEN SPIRIT") {
-                    pauseSong();
-                    audio = teenSpirit;
-                    songInfo(24);
-                } if (aryWord == "TIME OF THE SEASON") {
-                    pauseSong();
-                    audio = timeSeason;
-                    songInfo(25);
-                } if (aryWord == "FOR WHAT IT\'S WORTH") {
-                    pauseSong();
-                    audio = whatItsWorth;
-                    songInfo(26);
-                } 
+                
 
             }
         } 
@@ -338,6 +126,7 @@ function guessLetter() {
 // starts game 
 
 function quarter() {
+    document.getElementById("results").style.display = "none";
     guesses = 3;
     document.getElementById("button1").style.visibility = "visible";
     document.getElementById("button2").style.visibility = "visible";
@@ -369,6 +158,7 @@ function quarter() {
     document.getElementById("hint-reveal").innerHTML = "";
     document.getElementById("guesses-left").innerHTML = guesses;
     document.getElementById("guess-box").style.visibility = "visible";
+    document.getElementById("guess-button").style.display = "inline-block";
     document.getElementById("start-game").style.visibility = "visible";
     document.getElementById("wins-box").style.visibility = "visible";
     
@@ -377,7 +167,6 @@ function quarter() {
 // displays current song title and artist
 
 function songInfo(s) {
-    wins++;
     document.getElementById("wins").innerHTML = wins;
     if (s == 1) {
         audio.play();
@@ -528,6 +317,7 @@ function pauseSong() {
 
 function gameOver(){
     audio.pause();
+    document.getElementById("guess").value = "";
     recordScratch.play();
     document.getElementById("game-zone").innerHTML = "OUT OF ORDER"
     document.getElementById("button1").style.visibility = "hidden";
@@ -557,6 +347,7 @@ function gameOver(){
     document.getElementById("button25").style.visibility = "hidden";
     document.getElementById("button26").style.visibility = "hidden";
     document.getElementById("hint").style.visibility = "hidden";
+    document.getElementById("guess-button").style.display = "none";
     letterBank = 0;
     document.getElementById("current-song").innerHTML = "";
     document.getElementById("hint-reveal").innerHTML = ""; 
@@ -565,7 +356,115 @@ function gameOver(){
 // game win hides the keyboard keys resets letterBank and hint box
 
 function gameWin() {
-
+    wins++;
+    document.getElementById("results").style.display = "inline-block";
+    document.getElementById("guess").value = "";
+    if (aryWord == "MY GIRL") {
+        pauseSong();
+        audio = myGirl;
+        songInfo(1);
+    } if (aryWord == "BACK IN BLACK") {
+        pauseSong();
+        audio = backInBlack;
+        songInfo(2);
+    } if (aryWord == "BEAT IT") {
+        pauseSong();
+        audio = beatIt;
+        songInfo(3);
+    } if (aryWord == "BORN TO BE WILD") {
+        pauseSong();
+        audio = bornWild;
+        songInfo(4);
+    } if (aryWord == "I GOT YOU BABE") {
+        pauseSong();
+        audio = gotYouBabe;
+        songInfo(5);
+    } if (aryWord == "I WANNA HOLD YOUR HAND") {
+        pauseSong();
+        audio = holdYourHand;
+        songInfo(6);
+    } if (aryWord == "LUCY IN THE SKY WITH DIAMONDS") {
+        pauseSong();
+        audio = lucySky;
+        songInfo(7);
+    } if (aryWord == "ROADHOUSE BLUES") {
+        pauseSong();
+        audio = roadHouseBlues;
+        songInfo(8);
+    } if (aryWord == "SATISFACTION") {
+        pauseSong();
+        audio = satisfaction;
+        songInfo(9);
+    } if (aryWord == "WALKING ON SUNSHINE") {
+        pauseSong();
+        audio = sunshine;
+        songInfo(10);
+    } if (aryWord == "BILLIE JEAN") {
+        pauseSong();
+        audio = billieJean;
+        songInfo(11);
+    } if (aryWord == "HIT THE ROAD JACK") {
+        pauseSong();
+        audio = hitTheRoadJack;
+        songInfo(12);
+    } if (aryWord == "I GET AROUND") {
+        pauseSong();
+        audio = iGetAround;
+        songInfo(13);
+    } if (aryWord == "LIGHT MY FIRE") {
+        pauseSong();
+        audio = lightMyFire;
+        songInfo(14);
+    } if (aryWord == "SUNSHINE OF YOUR LOVE") {
+        pauseSong();
+        audio = sunshineOfYourLove;
+        songInfo(15);
+    } if (aryWord == "ALL ALONG THE WATCHTOWER") {
+        pauseSong();
+        audio = allAlongTheWatchtower;
+        songInfo(16);
+    } if (aryWord == "HOUSE OF THE RISING SUN") {
+        pauseSong();
+        audio = houseOfRisingSun;
+        songInfo(17);
+    } if (aryWord == "ANOTHER ONE BITES THE DUST") {
+        pauseSong();
+        audio = bitesTheDust;
+        songInfo(18);
+    } if (aryWord == "SUMMER IN THE CITY") {
+        pauseSong();
+        audio = summerInTheCity;
+        songInfo(19);
+    } if (aryWord == "THE AGE OF AQUARIUS") {
+        pauseSong();
+        audio = ageAquarius;
+        songInfo(20);
+    } 
+    if (aryWord == "GOD ONLY KNOWS") {
+        pauseSong();
+        audio = godOnlyKnows;
+        songInfo(21);
+    } if (aryWord == "MRS. ROBINSON") {
+        pauseSong();
+        audio = mrsRobinson;
+        songInfo(22);
+    } if (aryWord == "MR. TAMBOURINE MAN") {
+        pauseSong();
+        audio = mrTambourineMan;
+        songInfo(23);
+    } if (aryWord == "SMELLS LIKE TEEN SPIRIT") {
+        pauseSong();
+        audio = teenSpirit;
+        songInfo(24);
+    } if (aryWord == "TIME OF THE SEASON") {
+        pauseSong();
+        audio = timeSeason;
+        songInfo(25);
+    } if (aryWord == "FOR WHAT IT\'S WORTH") {
+        pauseSong();
+        audio = whatItsWorth;
+        songInfo(26);
+    } 
     document.getElementById("button1").style.visibility = "hidden";
     document.getElementById("button2").style.visibility = "hidden";
     document.getElementById("button3").style.visibility = "hidden";
@@ -593,13 +492,27 @@ function gameWin() {
     document.getElementById("button25").style.visibility = "hidden";
     document.getElementById("button26").style.visibility = "hidden";
     document.getElementById("hint").style.visibility = "hidden";
+    document.getElementById("guess-button").style.display = "none";
     letterBank = 0;
     document.getElementById("hint-reveal").innerHTML = ""; 
 }
 
 // resets letterBank and plays quarter drop sound
 function resetGame() {
+    
     letterBank = 0;
     quarterDrop.play();
     document.getElementById("start-game").style.visibility = "hidden";
+}
+
+// guess box
+function submitGuess(){
+    var guess = document.getElementById("guess").value;
+    guess = guess.toUpperCase();
+    if(guess === aryWord){
+        document.getElementById("game-zone").innerHTML = guess;
+        gameWin();
+    }else{
+        gameOver();
+    }
 }

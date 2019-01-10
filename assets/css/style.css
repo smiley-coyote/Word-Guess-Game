@@ -74,9 +74,9 @@ header {
 .body-game {
     position: absolute;
     margin-left: 450px;
-    margin-top: 70px;
+    margin-top: 50px;
     width: 450px;
-    height: 440px;
+    height: 475px;
     float: right;
     padding-top: 200px;
     border: 3px solid pink;
@@ -100,6 +100,35 @@ button {
     width: 40px;
     position: relative;
     bottom: 60px;
+}
+#guess-button{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: -40px;
+    display: none;
+}
+#results{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: -40px;
+    display: none;
+}
+
+#guess {
+    height: 25px;
+}
+#submit-guess{
+    width: auto;
+    height: 25px;
+    border-radius: 5%;
 }
 
 #start-game button {
@@ -127,15 +156,24 @@ button {
     position: relative;
     display: inline-block;
     float: left;
-    top: 40px;
+    top: 15px;
     visibility: hidden;
+}
+
+#correct{
+    display: none;
 }
 #wins-box {
     position: relative;
     display: inline-block;
     float: right;
-    top: 40px;
+    top: 15px;
     visibility: hidden;
+}
+
+#box{
+    position: relative;
+    bottom: 20px;
 }
 
 #box button {
