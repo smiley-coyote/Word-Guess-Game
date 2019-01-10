@@ -51,7 +51,7 @@ header {
   }
 
 #jukebox-main {
-    width: 960px;
+    width: 100%;
     background: white;
     height: 580px;
     margin-top: 30px;
@@ -227,3 +227,43 @@ button {
     95% {color: blue}
     100%{color: #1FF30C}
 }
+
+@media screen and (max-width: 830px) {
+  .container{
+      width: 600px;
+  }
+  .body-game{
+      position: relative;
+      float: none;
+      margin: 0 auto;
+  }
+  #jukebox-main{
+      height: 900px;
+  }
+  #jukebox-main img{
+      height: 300px;
+      width: auto;
+      float: none;
+  }
+
+}
+
+@media screen and (max-width: 580px) {
+    .container{
+        width: 395px;
+    }
+    .body-game{
+        width:375px;
+        height: 520px;
+        margin-left: 0;
+    }
+    #jukebox-main{
+        height: 900px;
+    }
+    #jukebox-main img{
+        height: 300px;
+        width: auto;
+        float: none;
+    }
+  
+  }
